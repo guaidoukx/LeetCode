@@ -19,7 +19,16 @@ namespace h0349{
     class Solution {
     public:
         vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+            set<int> set1(nums1.begin(), nums1.end());
 
+            set<int> res;
+            for (int i=0;i<nums2.size();i++){
+                if (set1.find(nums2[i])!= set1.end())
+                    res.insert(nums2[i]);
+            }
+
+            vector<int> ressult(res.begin(), res.end());
+            return ressult;
         }
     };
 }
