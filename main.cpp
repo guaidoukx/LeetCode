@@ -13,6 +13,7 @@
 #include "h0215.h"
 #include "h0209.h"
 #include "h0076.h"
+#include "h0149.h"
 
 
 using namespace std;
@@ -51,21 +52,18 @@ int main() {
 //    map<int, set<pair<int, int>>> a;
 //    set<pair<int, int>> b;
 //    b = a[2];
-    set<vector<int>> a;
-    vector<int> b = {1,2};
-    vector<int> c = {1,2,4};
-    a.insert(b);
-    b.push_back(3);
-    a.insert(b);
-    a.insert(c);
-    for (set<vector<int>>::iterator iter= a.begin();iter!=a.end(); iter++){
-        cout<<&iter<<" ";
-        for (vector<int>::const_iterator it=iter->begin();it!=iter->end();it++){
-            cout<<&it<<" " ;
-            cout<<*it<<" ";
-        }cout<<endl;
-    }
 
-    cout<<
+
+//    map<map<char, int>, int> a;
+//    map<char, int> a1{{'a',2},{'c',3}};
+//    map<char, int> a2{{'a',2},{'c',3}};
+//    a.insert({a1,2});
+//    a.insert({a1,3});
+//    cout<<(a.size());
+
+    vector<vector<int>> a{{1, 2},{3, 4}};
+    h0149::Solution solution = h0149::Solution();
+    solution.measure((118), (-788));
+
 
 }
