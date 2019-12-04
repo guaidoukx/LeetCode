@@ -49,9 +49,9 @@ namespace h0149 {
         }
 
         pair<int, int> measure(int x, int y) {
-            if (x == 0)  // dx 为0 或者 dy 为0的时候，要单独考虑
+            // dx 为0 或者 dy 为0的时候，要单独考虑
+            if (x == 0)
                 return make_pair(x, INT_MAX);
-
             if (y == 0)
                 return make_pair(INT_MAX, y);
 
@@ -63,6 +63,7 @@ namespace h0149 {
                 x1 = y1;
                 y1 = z;
             }
+
             // 特殊情况3 两个非常大的数相乘可能会溢出，要做类型转换
             // 特殊情况4 -1,-2 和 1，2表达的是同一个斜率。 -1,2 和 1,-2 表达的是同一个斜率。
             if ((long long) x * (long long) y > 0) {
