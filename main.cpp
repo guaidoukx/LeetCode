@@ -1,4 +1,3 @@
-#include <iostream>
 #include <map>
 #include <vector>
 #include <set>
@@ -14,11 +13,6 @@
 #include "h0209.h"
 #include "h0076.h"
 #include "h0149.h"
-
-
-using namespace std;
-
-int main() {
 
 //    set<int> s;
 //    cout<<(s.find(2)!=s.end());
@@ -61,9 +55,17 @@ int main() {
 //    a.insert({a1,3});
 //    cout<<(a.size());
 
-    vector<vector<int>> a{{1, 2},{3, 4}};
-    h0149::Solution solution = h0149::Solution();
-    solution.measure((118), (-788));
+//    vector<vector<int>> a{{1, 2},{3, 4}};
+//    h0149::Solution solution = h0149::Solution();
+//    solution.measure((118), (-788));
 
+#include <iostream>
+#include <iomanip>
 
+using namespace std;
+
+int main() {
+    string a = "-25";
+    int b = atoi(a.c_str());
+    cout<<b;
 }
