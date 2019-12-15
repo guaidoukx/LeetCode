@@ -1,18 +1,4 @@
-#include <map>
-#include <vector>
-#include <set>
-#include <string>
-#include <cmath>
-#include <array>
-#include <queue>
-#include "h0283.h"
-#include "h0027.h"
-#include "h0080.h"
-#include "h0088.h"
-#include "h0215.h"
-#include "h0209.h"
-#include "h0076.h"
-#include "h0149.h"
+
 
 //    set<int> s;
 //    cout<<(s.find(2)!=s.end());
@@ -59,13 +45,91 @@
 //    h0149::Solution solution = h0149::Solution();
 //    solution.measure((118), (-788));
 
+
 #include <iostream>
 #include <iomanip>
+#include <map>
+#include <vector>
+#include <set>
+#include <string>
+#include <cmath>
+#include <array>
+#include <queue>
+#include <stack>
+#include <functional>
+#include <numeric>
 
 using namespace std;
 
+
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
 int main() {
-    string a = "-25";
-    int b = atoi(a.c_str());
-    cout<<b;
+
+    stack<TreeNode *> a;
+    TreeNode *b = new TreeNode(3);
+    a.push(b);
+    a.push(b->left);
+    cout<<a.size();
+//    int arr[4] = {1,2,3};
+//    change(a);
+//
+//    for (int i =0;i<10;i++)
+//        cout<<a[i]<<" ";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    int n, p;
+//    cin >> n >> p;
+//    int arr[n];
+//    priority_queue<pair<int, int>, vector<pair<int, int>>, function<bool(pair<int,int>,pair<int,int>)>> q(myComp);
+//    for (int i = 0; i < n; i++) {
+//        cin >> arr[i];
+//        q.push(make_pair(arr[i], i));
+//    }
+//    int time = 0;
+//    int res[n];
+//    for (int i = 0; i < n; i++)
+//        res[i] = 0;
+//
+//    pair<int, int> poped;
+//    while (!q.empty()) {
+//        poped = q.top();
+//        q.pop();
+//        if (poped.first > time) {
+//            time = poped.first + p;
+//            res[poped.second] = time;
+//        } else {
+//            time = time + p;
+//            res[poped.second] = time;
+//        }
+//    }
+//    for (int i = 0; i < n - 1; i++)
+//        cout << res[i] << " ";
+//    cout << res[n - 1];
+    return 0;
+
 }
