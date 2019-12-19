@@ -62,27 +62,32 @@
 using namespace std;
 
 
-struct TreeNode {
+struct ListNode {
     int val;
-    TreeNode *left;
-    TreeNode *right;
+    ListNode *next;
 
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+    ListNode(int x) : val(x), next(NULL) {}
+};
+
+
+struct cmp{
+    bool operator ()(ListNode * a,ListNode * b){    //通过传入不同类型来定义不同类型优先级
+        return a->val > b->val;    //最小值优先
+    }
 };
 
 int main() {
 
-    stack<TreeNode *> a;
-    TreeNode *b = new TreeNode(3);
-    a.push(b);
-    a.push(b->left);
-    cout<<a.size();
-//    int arr[4] = {1,2,3};
-//    change(a);
-//
-//    for (int i =0;i<10;i++)
-//        cout<<a[i]<<" ";
+priority_queue<ListNode *, vector<ListNode*>, cmp> q;
+int arr[] = {1,4,5,1,3,4,2,6};
 
+for (int i:arr){
+    q.push(new ListNode(i));
+}
+while (!q.empty()){
+    cout<<q.top()->val;
+    q.pop();
+}
 
 
 
