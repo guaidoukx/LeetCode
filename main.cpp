@@ -62,32 +62,23 @@
 using namespace std;
 
 
-struct ListNode {
-    int val;
-    ListNode *next;
-
-    ListNode(int x) : val(x), next(NULL) {}
-};
-
-
-struct cmp{
-    bool operator ()(ListNode * a,ListNode * b){    //通过传入不同类型来定义不同类型优先级
-        return a->val > b->val;    //最小值优先
+string vector2String(vector<int> ipSplit) {
+    string ip = to_string(ipSplit[0]);
+    for (int i = 1; i < ipSplit.size(); i++) {
+        ip = ip + "." + to_string(ipSplit[i]);
     }
-};
+    return ip;
+}
+
 
 int main() {
+    map<int, bool > record;
 
-priority_queue<ListNode *, vector<ListNode*>, cmp> q;
-int arr[] = {1,4,5,1,3,4,2,6};
+//    vector<int> a ={1,2,45};
+//    cout<<vector2String(a);
+    return 0;
+}
 
-for (int i:arr){
-    q.push(new ListNode(i));
-}
-while (!q.empty()){
-    cout<<q.top()->val;
-    q.pop();
-}
 
 
 
@@ -135,6 +126,3 @@ while (!q.empty()){
 //    for (int i = 0; i < n - 1; i++)
 //        cout << res[i] << " ";
 //    cout << res[n - 1];
-    return 0;
-
-}
