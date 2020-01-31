@@ -39,7 +39,7 @@ namespace h0401 {
             return res;
         }
 
-        // n 1s, already has k 1s
+        // rows 1s, already has k 1s
         void getHour(int n, int k, int h, int start) {
             if (k == n) {
                 if (h <= 11)

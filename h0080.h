@@ -1,18 +1,24 @@
 //
-// Created by 项雅丽 on 2019/11/20.
+// Created by 项雅丽 on 2019/12/30.
 //
 
-#ifndef LEETCODE_H26_H
-#define LEETCODE_H26_H
+#ifndef LEETCODE_H0080_H
+#define LEETCODE_H0080_H
 
 #include <iostream>
-#include <vector>
 #include <map>
 #include <set>
+#include <vector>
+#include <queue>
+#include <stack>
+#include <cmath>
+#include <string>
+#include <memory>
+#include <numeric>
 
 using namespace std;
 
-namespace h0080 {
+namespace h0080{
     class Solution {
     public:
         int removeDuplicates(vector<int> &nums) {
@@ -38,4 +44,4 @@ namespace h0080 {
     };
 }
 
-#endif //LEETCODE_H26_H
+#endif //LEETCODE_H0080_H

@@ -79,7 +79,7 @@ namespace h0129 {
             }
             if (root->left != NULL) dfs(root->left, cur);
             if (root->right != NULL) dfs(root->right, cur);
-            cur = cur / 10;
+//            cur = cur / 10;
         }
     };
 }

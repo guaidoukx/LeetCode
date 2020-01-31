@@ -58,25 +58,72 @@
 #include <stack>
 #include <functional>
 #include <numeric>
+#include <unordered_set>
 
 using namespace std;
 
+class Solution1_{
+    vector<int> begin;
+    vector<int> end;
 
-string vector2String(vector<int> ipSplit) {
-    string ip = to_string(ipSplit[0]);
-    for (int i = 1; i < ipSplit.size(); i++) {
-        ip = ip + "." + to_string(ipSplit[i]);
+    vector<int> addrSearching(int pointer){
+        int n = begin.size();
+        int index = binarySearch(begin, pointer, 0, n-1);
+        vector<int> res;
+        res.push_back(begin[index]);
+        res.push_back(end[index]);
+        return  res;
     }
-    return ip;
-}
+    int binarySearch(vector<int> &nums, int target ,int l, int r){
+        if (l > r) return -1;
+        int mid = l + (r-l) /2;
+        if (nums[mid] <= target && nums[mid+1]>target) return mid;
+        if (nums[mid] > target) return binarySearch(nums, target, l, mid -1);
+        if (nums[mid+1]<target ) return binarySearch(nums, target, mid +1, r);
+    }
+};
+
+
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
+class Solution2_ {
+public:
+    TreeNode *sort(TreeNode *root) {
+        stack<TreeNode *>s;
+        TreeNode* tmp = root;
+        TreeNode * head;
+        while (tmp != NULL || !s.empty()) {
+            if (tmp != NULL) {
+                s.push(tmp);
+                tmp = tmp->left;
+            }
+
+            else {
+                tmp = s.top();
+                s.pop();
+
+                tmp->right = s.top();
+            }
+        }
+
+    }
+};
+
+
+
 
 
 int main() {
-    map<int, bool > record;
+    set<int> a;
+    a.er
 
-//    vector<int> a ={1,2,45};
-//    cout<<vector2String(a);
-    return 0;
+
 }
 
 
@@ -95,34 +142,3 @@ int main() {
 
 
 
-
-
-
-//    int n, p;
-//    cin >> n >> p;
-//    int arr[n];
-//    priority_queue<pair<int, int>, vector<pair<int, int>>, function<bool(pair<int,int>,pair<int,int>)>> q(myComp);
-//    for (int i = 0; i < n; i++) {
-//        cin >> arr[i];
-//        q.push(make_pair(arr[i], i));
-//    }
-//    int time = 0;
-//    int res[n];
-//    for (int i = 0; i < n; i++)
-//        res[i] = 0;
-//
-//    pair<int, int> poped;
-//    while (!q.empty()) {
-//        poped = q.top();
-//        q.pop();
-//        if (poped.first > time) {
-//            time = poped.first + p;
-//            res[poped.second] = time;
-//        } else {
-//            time = time + p;
-//            res[poped.second] = time;
-//        }
-//    }
-//    for (int i = 0; i < n - 1; i++)
-//        cout << res[i] << " ";
-//    cout << res[n - 1];

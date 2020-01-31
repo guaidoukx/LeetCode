@@ -23,6 +23,7 @@ namespace h0046 {
     public:
         vector<vector<int>> res;
         vector<bool> used;
+
         vector<vector<int>> permute(vector<int> &nums) {
             vector<int> out;
             used = vector<bool>(nums.size(), false);
@@ -30,16 +31,16 @@ namespace h0046 {
             return res;
         }
 
-        void getPermute(vector<int> &nums, int index, vector<int> &out){
-            if(index==nums.size()){
+        void getPermute(vector<int> &nums, int index, vector<int> &out) {
+            if (index == nums.size()) {
                 res.push_back(out);
                 return;
             }
-            for (int i=0;i<nums.size();i++){
-                if (!used[i]){
+            for (int i = 0; i < nums.size(); i++) {
+                if (!used[i]) {
                     used[i] = true;
                     out.push_back(nums[i]);
-                    getPermute(nums, index+1, out);
+                    getPermute(nums, index + 1, out);
                     out.pop_back();
                     used[i] = false;
                 }
