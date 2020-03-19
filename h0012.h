@@ -43,6 +43,10 @@ namespace h0012 {
             return res;
         }
     };
+
+    vector<vector<string>> ok (){
+        return 2;
+    }
 }
 
 #endif //LEETCODE_H0012_H

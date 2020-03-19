@@ -47,42 +47,22 @@
 
 
 #include <iostream>
-#include <iomanip>
+//#include <iomanip>
 #include <map>
-#include <vector>
+#include <unordered_map>
+//#include <vector>
 #include <set>
-#include <string>
-#include <cmath>
-#include <array>
+//#include <string>
+//#include <cmath>
+//#include <array>
 #include <queue>
-#include <stack>
-#include <functional>
-#include <numeric>
+//#include <stack>
+//#include <functional>
+//#include <numeric>
 #include <unordered_set>
+//#include <list>
 
 using namespace std;
-
-class Solution1_{
-    vector<int> begin;
-    vector<int> end;
-
-    vector<int> addrSearching(int pointer){
-        int n = begin.size();
-        int index = binarySearch(begin, pointer, 0, n-1);
-        vector<int> res;
-        res.push_back(begin[index]);
-        res.push_back(end[index]);
-        return  res;
-    }
-    int binarySearch(vector<int> &nums, int target ,int l, int r){
-        if (l > r) return -1;
-        int mid = l + (r-l) /2;
-        if (nums[mid] <= target && nums[mid+1]>target) return mid;
-        if (nums[mid] > target) return binarySearch(nums, target, l, mid -1);
-        if (nums[mid+1]<target ) return binarySearch(nums, target, mid +1, r);
-    }
-};
-
 
 struct TreeNode {
     int val;
@@ -92,40 +72,23 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
-class Solution2_ {
-public:
-    TreeNode *sort(TreeNode *root) {
-        stack<TreeNode *>s;
-        TreeNode* tmp = root;
-        TreeNode * head;
-        while (tmp != NULL || !s.empty()) {
-            if (tmp != NULL) {
-                s.push(tmp);
-                tmp = tmp->left;
-            }
-
-            else {
-                tmp = s.top();
-                s.pop();
-
-                tmp->right = s.top();
-            }
-        }
-
+void get(vector<int> &nums){
+    vector<int> x = nums;
+    nums[1] = 100;
+    for (int i = 0; i< nums.size(); i++){
+        cout<<x[i]<<endl;
     }
-};
-
-
-
+}
 
 
 int main() {
-    set<int> a;
-    a.er
-
-
+    set<int> s;
+    unordered_map<char, int> cnt;
+    cnt['d'] = 0;
+    for(unordered_map<char, int>::iterator iter=cnt.begin(); iter!=cnt.end();iter++ ){
+        cout<<iter->first<<endl;
+    }
 }
-
 
 
 

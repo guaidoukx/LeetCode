@@ -42,6 +42,29 @@ namespace h0494 {
             return dp[n][S + 1000];
         }
     };
+
+    class Solution1 {
+        // 哥哥，这是一个回溯就解决的事情呀，但是我知道这样递归其实会栈溢出
+    private:
+        int res;
+
+        void find(vector<int> &nums, int i, long target) {
+            if (target == 0 && i == nums.size()) {
+                res++;
+                return;
+            }
+            if (i >= nums.size()) return;
+            find(nums, i + 1, target - nums[i]);
+            find(nums, i + 1, target + nums[i]);
+        }
+
+    public:
+        int findTargetSumWays(vector<int> &nums, int S) {
+            res = 0;
+            find(nums, 0, S);
+            return res;
+        }
+    };
 }
 
 #endif //LEETCODE_H0494_H
